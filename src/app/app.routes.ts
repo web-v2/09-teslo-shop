@@ -3,6 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./store/store-front.routes'),
+    loadChildren: () =>
+      import('./store/store-front.routes').then((m) => m.storeFrontRoutes),
   },
 ];
