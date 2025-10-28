@@ -1,8 +1,16 @@
 /* Minimal CSS while diagnosing build crash (Tailwind disabled) */
 @import "tailwindcss";
-@plugin "daisyui";
+@plugin "daisyui" {
+  themes: night --default, dark --prefersdark;
+}
+@layer base {
+    @font-face {
+        font-family: "Montserrat";
+        src: url("/assets/fonts/MontserratAlternates-Medium.ttf") format("truetype");
+    }
+}
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Montserrat", Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
