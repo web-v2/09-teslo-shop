@@ -3,13 +3,15 @@
     <img
       src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
       alt="Shoes" />
-  </figure>
-  <div class="animate-fadeIn">Contenido que aparece suavemente</div>
+  </figure>  
   <div class="card-body">
-    <h2 class="card-title">Card Title</h2>
-    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+    <h2 class="card-title">{{product().title}}</h2>
+    <p class="text-lg font-semibold text-primary">
+      {{ product().price | currency:'USD' }}
+    </p>
+    <p>{{product().description | slice:0:100}}...</p>
     <div class="card-actions justify-end">
-      <a [routerLink]="['/product', 't-shirt']" class="btn btn-primary animate-spinSlow">View Details</a>
+      <a [routerLink]="['/product', product().slug]" class="btn btn-primary animate-fadeIn hover:scale-105 transition-transform duration-200">View Details</a>
     </div>
   </div>
 </div>
